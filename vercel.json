@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/whatsapp",
+      "destination": "https://wa.me/5585988461515?text=Vim%20pelo%20Instagram",
+      "permanent": true
+    }
+  ]
+}
