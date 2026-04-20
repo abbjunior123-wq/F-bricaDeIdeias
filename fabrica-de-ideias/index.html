@@ -998,97 +998,247 @@
     /* ============================================================
        CTA WHATSAPP
     ============================================================ */
+    /* ============================================================
+       FORMULÁRIO DE ORÇAMENTO
+    ============================================================ */
     #orcamento {
-      background: var(--white);
+      background: var(--black);
       padding: 96px 0;
       position: relative;
       overflow: hidden;
     }
 
-    .cta-wa-block {
-      max-width: 680px;
+    #orcamento::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(245,196,0,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .form-cta-wrapper {
+      max-width: 760px;
       margin: 0 auto;
-      text-align: center;
       position: relative;
       z-index: 1;
     }
 
-    .cta-wa-title {
-      color: var(--black);
-      margin-bottom: 16px;
+    .form-cta-head {
+      text-align: center;
+      margin-bottom: 48px;
     }
 
-    .cta-wa-sub {
+    .form-cta-head .section-label {
+      color: var(--yellow);
+    }
+
+    .form-cta-title {
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .form-cta-sub {
       font-size: 16px;
-      color: var(--gray-500);
+      color: rgba(255,255,255,0.5);
       line-height: 1.7;
-      margin-bottom: 28px;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
-    .cta-wa-badges {
+    .orcamento-form {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 16px;
+      padding: 40px;
+      backdrop-filter: blur(8px);
+    }
+
+    .form-row {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-row-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      color: var(--white);
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      padding: 20px 16px 8px;
+      outline: none;
+      transition: border-color var(--transition), background var(--transition);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group textarea {
+      resize: none;
+      min-height: 96px;
+    }
+
+    .form-group select option {
+      background: #111;
+      color: var(--white);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--yellow);
+      background: rgba(245,196,0,0.06);
+    }
+
+    .form-group label {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+
+    .form-group textarea ~ label {
+      top: 20px;
+      transform: none;
+    }
+
+    .form-group input:focus ~ label,
+    .form-group input:not(:placeholder-shown) ~ label,
+    .form-group textarea:focus ~ label,
+    .form-group textarea:not(:placeholder-shown) ~ label,
+    .form-group select:focus ~ label,
+    .form-group select.has-value ~ label {
+      top: 8px;
+      transform: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+
+    .form-group label span {
+      color: var(--yellow);
+    }
+
+    .form-group-select {
+      position: relative;
+    }
+
+    .form-group-select .select-arrow {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: rgba(255,255,255,0.35);
+      pointer-events: none;
+    }
+
+    .form-submit-btn {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 36px;
-    }
-
-    .cta-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(0,0,0,0.04);
-      border: 1px solid rgba(0,0,0,0.08);
-      color: var(--gray-500);
-      font-size: 13px;
-      font-weight: 500;
-      padding: 7px 14px;
-      border-radius: 100px;
-    }
-
-    .cta-badge svg {
-      color: var(--yellow-dark);
-      flex-shrink: 0;
-    }
-
-    .btn-wa-big {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--green-wa);
-      color: var(--white);
+      gap: 10px;
+      background: var(--yellow);
+      color: var(--black);
       font-family: 'Syne', sans-serif;
-      font-size: 17px;
-      font-weight: 700;
+      font-size: 16px;
+      font-weight: 800;
       padding: 18px 36px;
+      border: none;
       border-radius: 100px;
-      text-decoration: none;
+      cursor: pointer;
       transition: var(--transition);
-      box-shadow: 0 8px 32px rgba(37,211,102,0.35);
-      letter-spacing: 0.01em;
+      letter-spacing: 0.02em;
+      margin-top: 8px;
     }
 
-    .btn-wa-big svg {
-      width: 24px;
-      height: 24px;
+    .form-submit-btn svg {
+      width: 20px;
+      height: 20px;
       flex-shrink: 0;
     }
 
-    .btn-wa-big:hover {
-      background: #1ebe5b;
-      transform: translateY(-3px);
-      box-shadow: 0 14px 40px rgba(37,211,102,0.45);
+    .form-submit-btn:hover {
+      background: var(--yellow-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(245,196,0,0.35);
     }
 
-    .cta-wa-phone {
-      margin-top: 18px;
-      font-size: 14px;
-      color: rgba(0,0,0,0.3);
+    .form-disclaimer {
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+      margin-top: 16px;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+    }
+
+    .form-success-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(245,196,0,0.12);
+      border: 2px solid var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .form-success-icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--yellow);
+    }
+
+    .form-success h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--white);
       letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+
+    .form-success p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      .form-row-2 {
+        grid-template-columns: 1fr;
+      }
+      .orcamento-form {
+        padding: 28px 20px;
+      }
     }
 
     /* ============================================================
@@ -1806,7 +1956,7 @@
           <li><a href="#depoimentos">Depoimentos</a></li>
           <li><a href="#localizacao">Localização</a></li>
           <li>
-            <a href="https://wa.me/5585988461515?text=Ol%C3%A1%21+Vim+atrav%C3%A9s+do+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es." target="_blank" rel="noopener" class="btn btn-yellow nav-cta">Solicitar Orçamento</a>
+            <a href="#orcamento" class="btn btn-yellow nav-cta">Solicitar Orçamento</a>
           </li>
         </ul>
 
@@ -1822,7 +1972,7 @@
         <a href="#projetos">Projetos</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#localizacao">Localização</a>
-        <a href="https://wa.me/5585988461515?text=Ol%C3%A1%21+Vim+atrav%C3%A9s+do+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es." target="_blank" rel="noopener" class="btn btn-yellow">Solicitar Orçamento</a>
+        <a href="#orcamento" class="btn btn-yellow">Solicitar Orçamento</a>
       </div>
     </div>
   </header>
@@ -2008,9 +2158,9 @@
       </div>
 
       <div style="text-align:center;margin-top:40px">
-        <a href="https://wa.me/5585988461515?text=Ol%C3%A1%21+Vim+atrav%C3%A9s+do+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es." target="_blank" rel="noopener" class="btn btn-yellow">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Falar pelo WhatsApp
+        <a href="#orcamento" class="btn btn-yellow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          Solicitar Orçamento
         </a>
       </div>
     </div>
@@ -2068,9 +2218,9 @@
       </div>
 
       <div style="text-align:center;margin-top:40px">
-        <a href="https://wa.me/5585988461515?text=Ol%C3%A1%21+Vim+atrav%C3%A9s+do+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es." target="_blank" rel="noopener" class="btn btn-yellow">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Falar pelo WhatsApp
+        <a href="#orcamento" class="btn btn-yellow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          Solicitar Orçamento
         </a>
       </div>
     </div>
@@ -2229,24 +2379,68 @@
     </div>
   </div>
 
-  <!-- ========== CTA WHATSAPP ========== -->
+  <!-- ========== FORMULÁRIO DE ORÇAMENTO ========== -->
   <section id="orcamento">
     <div class="container">
-      <div class="cta-wa-block animate-on-scroll">
-        <div class="cta-wa-content">
-          <span class="section-label">Fale com a gente</span>
-          <h2 class="section-title cta-wa-title">Pronto para transformar sua comunicação visual?</h2>
-          <p class="cta-wa-sub">Nossa equipe responde em até 2 horas úteis. Solicite seu orçamento agora pelo WhatsApp — rápido, direto e sem complicação.</p>
-          <div class="cta-wa-badges">
-            <span class="cta-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Resposta em até 2h</span>
-            <span class="cta-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Atendimento personalizado</span>
-            <span class="cta-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Orçamento gratuito</span>
+      <div class="form-cta-wrapper animate-on-scroll">
+        <div class="form-cta-head">
+          <span class="section-label">Orçamento Gratuito</span>
+          <h2 class="section-title form-cta-title">Solicite seu orçamento agora</h2>
+          <p class="form-cta-sub">Preencha em menos de 1 minuto — nossa equipe entra em contato em até 2 horas úteis.</p>
+        </div>
+
+        <form class="orcamento-form" id="orcamento-form" novalidate>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <input type="text" id="f-nome" name="nome" placeholder=" " required autocomplete="name" />
+              <label for="f-nome">Nome <span>*</span></label>
+            </div>
+            <div class="form-group">
+              <input type="text" id="f-cnpj" name="cnpj" placeholder=" " required autocomplete="off" inputmode="numeric" maxlength="18" />
+              <label for="f-cnpj">CNPJ <span>*</span></label>
+            </div>
           </div>
-          <a href="https://wa.me/5585988461515?text=Ol%C3%A1%21+Vim+atrav%C3%A9s+do+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es." target="_blank" rel="noopener" class="btn-wa-big">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Solicitar Orçamento pelo WhatsApp
-          </a>
-          <p class="cta-wa-phone">(85) 98846-1515</p>
+
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <input type="tel" id="f-whatsapp" name="whatsapp" placeholder=" " required autocomplete="tel" />
+              <label for="f-whatsapp">WhatsApp <span>*</span></label>
+            </div>
+            <div class="form-group form-group-select">
+              <select id="f-servico" name="servico" required>
+                <option value="" disabled selected></option>
+                <option value="Comunicação Visual">Comunicação Visual</option>
+                <option value="Brindes Corporativos">Brindes Corporativos</option>
+                <option value="Impressão Digital">Impressão Digital</option>
+                <option value="Adesivos e Envelopamento">Adesivos e Envelopamento</option>
+                <option value="Cardápios">Cardápios</option>
+                <option value="Outro">Outro</option>
+              </select>
+              <label for="f-servico">Serviço desejado <span>*</span></label>
+              <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group form-group-textarea">
+              <textarea id="f-mensagem" name="mensagem" rows="3" placeholder=" "></textarea>
+              <label for="f-mensagem">Mensagem (opcional)</label>
+            </div>
+          </div>
+
+          <button type="submit" class="form-submit-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Solicitar Orçamento
+          </button>
+          <p class="form-disclaimer">Seus dados são usados apenas para contato. Resposta em até 2 horas úteis.</p>
+        </form>
+
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Solicitação enviada!</h3>
+          <p>Entraremos em contato com você<br>em até 2 horas úteis. 😊</p>
         </div>
       </div>
     </div>
@@ -2616,6 +2810,100 @@
 
     scrollTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ------------------------------------------------
+       FORMULÁRIO → WHATSAPP
+    ------------------------------------------------ */
+    const form = document.getElementById('orcamento-form');
+    const selectServico = document.getElementById('f-servico');
+
+    // floating label for select
+    selectServico.addEventListener('change', () => {
+      selectServico.classList.toggle('has-value', selectServico.value !== '');
+    });
+
+    /* -- Máscara CNPJ: XX.XXX.XXX/XXXX-XX -- */
+    const cnpjInput = document.getElementById('f-cnpj');
+    cnpjInput.addEventListener('input', function () {
+      let v = this.value.replace(/\D/g, '').slice(0, 14);
+      if (v.length > 12) v = v.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})/, '$1.$2.$3/$4-$5');
+      else if (v.length > 8) v = v.replace(/^(\d{2})(\d{3})(\d{3})(\d{0,4})/, '$1.$2.$3/$4');
+      else if (v.length > 5) v = v.replace(/^(\d{2})(\d{3})(\d{0,3})/, '$1.$2.$3');
+      else if (v.length > 2) v = v.replace(/^(\d{2})(\d{0,3})/, '$1.$2');
+      this.value = v;
+    });
+
+    /* -- Máscara WhatsApp: (XX) XXXXX-XXXX -- */
+    const waInput = document.getElementById('f-whatsapp');
+    waInput.addEventListener('input', function () {
+      let v = this.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 6) v = v.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+      else if (v.length > 2) v = v.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+      else if (v.length > 0) v = v.replace(/^(\d{0,2})/, '($1');
+      this.value = v;
+    });
+
+    /* -- Validação CNPJ (14 dígitos) -- */
+    function cnpjValido(cnpj) {
+      const n = cnpj.replace(/\D/g, '');
+      if (n.length !== 14 || /^(\d)\1+$/.test(n)) return false;
+      const calc = (s, peso) => {
+        let sum = 0;
+        for (let i = 0; i < s.length; i++) sum += parseInt(s[i]) * peso[i];
+        const r = sum % 11;
+        return r < 2 ? 0 : 11 - r;
+      };
+      const p1 = [5,4,3,2,9,8,7,6,5,4,3,2];
+      const p2 = [6,5,4,3,2,9,8,7,6,5,4,3,2];
+      return calc(n.slice(0,12), p1) === parseInt(n[12]) &&
+             calc(n.slice(0,13), p2) === parseInt(n[13]);
+    }
+
+    function setFieldError(el, hasError) {
+      el.style.borderColor = hasError ? '#ff4d4d' : '';
+    }
+
+    // URL do Google Apps Script — cole aqui após implantar
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyRuuD8k8C8HYJniTWHCBavkV5zuWaoQeimUnHWZDx-iWLlJ4PrrDqwyVHD4fgVWkl39w/exec';
+
+    function enviarParaUmbler(dados) {
+      if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.includes('COLE_A_URL')) return;
+      const params = new URLSearchParams(dados).toString();
+      fetch(APPS_SCRIPT_URL + '?' + params, { method: 'GET', mode: 'no-cors' })
+        .catch(() => {}); // fire-and-forget, não bloqueia o redirect
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nome     = document.getElementById('f-nome').value.trim();
+      const cnpj     = cnpjInput.value.trim();
+      const whatsapp = waInput.value.trim();
+      const servico  = selectServico.value;
+      const mensagem = document.getElementById('f-mensagem').value.trim();
+
+      const waDigitos = whatsapp.replace(/\D/g, '');
+      let hasError = false;
+
+      setFieldError(document.getElementById('f-nome'), !nome);
+      setFieldError(cnpjInput, !cnpj || !cnpjValido(cnpj));
+      setFieldError(waInput, waDigitos.length < 10);
+      setFieldError(selectServico, !servico);
+
+      if (!nome) hasError = true;
+      if (!cnpj || !cnpjValido(cnpj)) hasError = true;
+      if (waDigitos.length < 10) hasError = true;
+      if (!servico) hasError = true;
+
+      if (hasError) return;
+
+      // Envia lead para o Umbler Talk (abordagem automática)
+      enviarParaUmbler({ nome, empresa: cnpj, whatsapp, servico, mensagem, source: 'Site' });
+
+      // Esconde o form e mostra mensagem de sucesso
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
     });
   </script>
 
