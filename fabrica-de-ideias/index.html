@@ -2904,6 +2904,8 @@
       // Esconde o form e mostra mensagem de sucesso
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'form_orcamento_enviado' });
     });
   </script>
 
