@@ -12,21 +12,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gráfica Fábrica de Ideias | Comunicação Visual em Fortaleza-CE</title>
   <meta name="description" content="Há mais de 20 anos transformando ideias em impressões de alto impacto em Fortaleza-CE. Banners, adesivos, brindes corporativos, placas e muito mais." />
-
-  <!-- Open Graph / Link Preview -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://f-brica-de-ideias.vercel.app/" />
-  <meta property="og:title"       content="Gráfica Fábrica de Ideias | Comunicação Visual em Fortaleza" />
-  <meta property="og:description" content="Há mais de 20 anos transformando ideias em impressões de alto impacto. Banners, adesivos, brindes corporativos, placas e muito mais." />
-  <meta property="og:image"       content="https://f-brica-de-ideias.vercel.app/og-image.jpg" />
-  <meta property="og:image:width"  content="1200" />
-  <meta property="og:image:height" content="630" />
-
-  <!-- WhatsApp / Twitter -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Gráfica Fábrica de Ideias | Fortaleza-CE" />
-  <meta name="twitter:description" content="Comunicação visual de alto impacto há mais de 20 anos." />
-  <meta name="twitter:image"       content="https://f-brica-de-ideias.vercel.app/og-image.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -2073,7 +2058,7 @@
             <div class="client-logo-item logo-tall"><img src="./image-removebg-preview (31).png" alt="Cliente" /></div>
             <div class="client-logo-item"><img src="./image-removebg-preview (32).png" alt="Cliente" /></div>
             <div class="client-logo-item"><img src="./image-removebg-preview (33).png" alt="Cliente" /></div>            <div class="client-logo-item"><img src="./image-removebg-preview (35).png" alt="Cliente" /></div>
-            <div class="client-logo-item"><img src="./Betcunha.png" alt="Betcunha" style="height:90px !important;max-width:200px !important;" /></div>
+            <div class="client-logo-item"><img src="./CLIENTEADICIONAR.png" alt="Cliente" /></div>
           </div>
         </div>
       </div>
@@ -2852,9 +2837,7 @@
     /* -- Máscara WhatsApp: (XX) XXXXX-XXXX -- */
     const waInput = document.getElementById('f-whatsapp');
     waInput.addEventListener('input', function () {
-      let v = this.value.replace(/\D/g, '');
-      if (v.startsWith('55') && v.length > 11) v = v.slice(2);
-      v = v.slice(0, 11);
+      let v = this.value.replace(/\D/g, '').slice(0, 11);
       if (v.length > 6) v = v.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
       else if (v.length > 2) v = v.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
       else if (v.length > 0) v = v.replace(/^(\d{0,2})/, '($1');
@@ -2882,7 +2865,7 @@
     }
 
     // URL do Google Apps Script — cole aqui após implantar
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwEwEvEkc9AWNhXwWccQopzac4ctqGCGXvZU0aB2IQ6fDuEGu0dD8oo8bYJBOMbRd6Mqw/exec';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1eiEbUVkWI2WW5cGXebQJ8ShkuNGGCPvky6BzpUvRWOR2yu69Ta_MEr7JsS9Mr0o4CQ/exec';
 
     function enviarParaUmbler(dados) {
       if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.includes('COLE_A_URL')) return;
@@ -2921,8 +2904,6 @@
       // Esconde o form e mostra mensagem de sucesso
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'form_orcamento_enviado' });
     });
   </script>
 
