@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5L5N3K7K');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fábrica de Ideias | Gráfica Digital em Fortaleza</title>
+  <meta name="description" content="Gráfica Fábrica de Ideias — Impressão UV, cardápios em PVC, brindes corporativos e comunicação visual em Fortaleza-CE." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="./logo 02 grande quadrada.png" />
+
+  <style>
+    :root {
+      --yellow:      #F5C400;
+      --yellow-dark: #D4A900;
+      --black:       #000000;
+      --white:       #FFFFFF;
+      --transition:  0.25s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Syne', sans-serif;
+      background: #0a0a0a;
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 20px 64px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Glow de fundo */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(245,196,0,0.07) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 440px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* HEADER */
+    .bio-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .bio-logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 2px solid rgba(245,196,0,0.2);
+      box-shadow: 0 0 0 6px rgba(245,196,0,0.05);
+      margin-bottom: 18px;
+    }
+    .bio-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .bio-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .bio-tagline {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    /* Pills de info */
+    .bio-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .bio-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+    }
+    .bio-pill.location {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.5);
+    }
+    .bio-pill.rating {
+      background: rgba(245,196,0,0.1);
+      border: 1px solid rgba(245,196,0,0.2);
+      color: var(--yellow);
+    }
+    .bio-pill svg { width: 12px; height: 12px; }
+    .bio-pill .stars { display: flex; gap: 1px; }
+    .bio-pill .stars svg { width: 10px; height: 10px; fill: var(--yellow); }
+
+    /* WHATSAPP PRIMARY */
+    .btn-wa {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      background: #25D366;
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 18px 22px;
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      transition: var(--transition);
+      box-shadow: 0 8px 32px rgba(37,211,102,0.3);
+      margin-bottom: 12px;
+    }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(37,211,102,0.4); filter: brightness(1.07); }
+    .btn-wa-icon { width: 38px; height: 38px; background: rgba(255,255,255,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .btn-wa-icon svg { width: 22px; height: 22px; fill: white; }
+    .btn-wa-text { flex: 1; }
+    .btn-wa-text span { display: block; font-size: 11px; font-weight: 500; opacity: 0.75; margin-bottom: 1px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .btn-wa-arrow { opacity: 0.6; }
+    .btn-wa-arrow svg { width: 18px; height: 18px; }
+
+    /* SEÇÃO DE LINKS */
+    .links-section { margin-bottom: 12px; }
+    .links-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 8px;
+      padding-left: 4px;
+    }
+    .links-stack { display: flex; flex-direction: column; gap: 8px; }
+
+    /* LINK CARD */
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 16px 18px;
+      text-decoration: none;
+      color: var(--white);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .link-card:hover {
+      background: rgba(245,196,0,0.06);
+      border-color: rgba(245,196,0,0.25);
+      transform: translateY(-1px);
+    }
+    .link-card-icon {
+      width: 44px; height: 44px;
+      background: rgba(245,196,0,0.08);
+      border: 1px solid rgba(245,196,0,0.12);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .link-card-icon svg { width: 20px; height: 20px; color: var(--yellow); }
+    .link-card-icon.ig { background: rgba(225,48,108,0.08); border-color: rgba(225,48,108,0.15); }
+    .link-card-icon.ig svg { color: #e1306c; }
+    .link-card-icon.maps { background: rgba(66,133,244,0.08); border-color: rgba(66,133,244,0.15); }
+    .link-card-icon.maps svg { color: #4285F4; }
+    .link-card-text { flex: 1; min-width: 0; }
+    .link-card-title { font-size: 14px; font-weight: 700; line-height: 1.2; }
+    .link-card-sub { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 2px; font-weight: 500; }
+    .link-card-arrow { color: rgba(255,255,255,0.2); flex-shrink: 0; }
+    .link-card-arrow svg { width: 16px; height: 16px; }
+
+    /* TAG de novidade */
+    .link-tag {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 2px 8px;
+      border-radius: 100px;
+      flex-shrink: 0;
+    }
+
+    /* DIVISOR */
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 20px 0;
+    }
+
+    /* FOOTER */
+    .bio-footer {
+      text-align: center;
+      margin-top: 32px;
+    }
+    .bio-footer p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      line-height: 1.7;
+    }
+    .bio-footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    .bio-footer a:hover { color: var(--yellow); }
+
+    /* Animação de entrada */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up:nth-child(1) { animation-delay: 0.05s; }
+    .fade-up:nth-child(2) { animation-delay: 0.10s; }
+    .fade-up:nth-child(3) { animation-delay: 0.15s; }
+    .fade-up:nth-child(4) { animation-delay: 0.20s; }
+    .fade-up:nth-child(5) { animation-delay: 0.25s; }
+    .fade-up:nth-child(6) { animation-delay: 0.30s; }
+    .fade-up:nth-child(7) { animation-delay: 0.35s; }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5L5N3K7K" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="bio-header fade-up">
+      <div class="bio-logo">
+        <img src="./logo 02 grande quadrada.png" alt="Gráfica Fábrica de Ideias" />
+      </div>
+      <div class="bio-name">Fábrica de Ideias</div>
+      <div class="bio-tagline">Gráfica digital em Fortaleza-CE<br>Impressão UV · PVC · Brindes · Comunicação Visual</div>
+      <div class="bio-pills">
+        <span class="bio-pill location">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Aldeota, Fortaleza
+        </span>
+        <span class="bio-pill rating">
+          <span class="stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </span>
+          5,0 no Google
+        </span>
+      </div>
+    </div>
+
+    <!-- WHATSAPP -->
+    <a class="btn-wa fade-up" href="https://wa.me/5585988461515?text=Ol%C3%A1%21+Vim+pelo+link+da+bio+e+gostaria+de+um+or%C3%A7amento." target="_blank" rel="noopener">
+      <div class="btn-wa-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <div class="btn-wa-text">
+        <span>Fale com a gente</span>
+        Solicitar orçamento via WhatsApp
+      </div>
+      <div class="btn-wa-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+    </a>
+
+    <!-- PRODUTOS / SERVIÇOS -->
+    <div class="links-section fade-up">
+      <div class="links-section-label">Produtos e Serviços</div>
+      <div class="links-stack">
+
+        <a class="link-card" href="./cardapios.html" target="_blank">
+          <div class="link-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="link-card-text">
+            <div class="link-card-title">Cardápios em PVC</div>
+            <div class="link-card-sub">Impressão UV · Resistente à água · 3 dias úteis</div>
+          </div>
+          <span class="link-tag">Novo</span>
+          <div class="link-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a class="link-card" href="./index.html" target="_blank">
+          <div class="link-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <div class="link-card-text">
+            <div class="link-card-title">Site Institucional</div>
+            <div class="link-card-sub">Conheça todos os nossos serviços</div>
+          </div>
+          <div class="link-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a class="link-card" href="https://wa.me/5585988461515?text=Ol%C3%A1%21+Tenho+interesse+em+brindes+corporativos." target="_blank" rel="noopener">
+          <div class="link-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          </div>
+          <div class="link-card-text">
+            <div class="link-card-title">Brindes Corporativos</div>
+            <div class="link-card-sub">Canetas, sacolas, camisetas e muito mais</div>
+          </div>
+          <div class="link-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a class="link-card" href="https://wa.me/5585988461515?text=Ol%C3%A1%21+Preciso+de+impress%C3%A3o+gr%C3%A1fica+%28banners%2C+flyers%2C+folders%29." target="_blank" rel="noopener">
+          <div class="link-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          </div>
+          <div class="link-card-text">
+            <div class="link-card-title">Impressão Gráfica</div>
+            <div class="link-card-sub">Banners, flyers, folders, adesivos e mais</div>
+          </div>
+          <div class="link-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a class="link-card" href="https://wa.me/5585988461515?text=Ol%C3%A1%21+Preciso+de+comunica%C3%A7%C3%A3o+visual+%28fachada%2C+placas%2C+letreiros%29." target="_blank" rel="noopener">
+          <div class="link-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div class="link-card-text">
+            <div class="link-card-title">Comunicação Visual</div>
+            <div class="link-card-sub">Fachadas, placas, letreiros e painéis</div>
+          </div>
+          <div class="link-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="divider fade-up"></div>
+
+    <!-- REDES E LOCALIZAÇÃO -->
+    <div class="links-section fade-up">
+      <div class="links-section-label">Redes e Localização</div>
+      <div class="links-stack">
+
+        <a class="link-card" href="https://instagram.com/fabricadeideiasce" target="_blank" rel="noopener">
+          <div class="link-card-icon ig">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div class="link-card-text">
+            <div class="link-card-title">Instagram</div>
+            <div class="link-card-sub">@fabricadeideiasce</div>
+          </div>
+          <div class="link-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+        <a class="link-card" href="https://maps.google.com/?q=Av.+Santos+Dumont+1740+Aldeota+Fortaleza" target="_blank" rel="noopener">
+          <div class="link-card-icon maps">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="link-card-text">
+            <div class="link-card-title">Como Chegar</div>
+            <div class="link-card-sub">Av. Santos Dumont, 1740 · Aldeota, Fortaleza</div>
+          </div>
+          <div class="link-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="bio-footer fade-up">
+      <p>
+        Seg a Sex · 08h às 18h<br>
+        <a href="tel:+5585988461515">(85) 98846-1515</a> · Aldeota, Fortaleza-CE
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
